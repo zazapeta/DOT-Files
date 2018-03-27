@@ -1,0 +1,6 @@
+[user]
+	name = Sami
+	email = xxx@xxxx.xxx
+[alias]
+	remote-prune = remote prune origin
+	dry-remote-prune = remote prune origin --dry-run
