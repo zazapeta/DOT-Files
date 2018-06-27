@@ -1,5 +1,7 @@
 # enable the git bash completion commands
-source ~/.git-completion.sh
+if [ -f ~/.git-completion.sh ]; then
+    source ~/.git-completion.sh
+fi
 # enable git unstaged indicators - set to a non-empty value
 GIT_PS1_SHOWDIRTYSTATE=true
 GIT_PS1_SHOWCOLORHINTS=true
@@ -8,7 +10,9 @@ GIT_PS1_SHOWUNTRACKEDFILES=true
 # enable showing of HEAD vs its upstream
 GIT_PS1_SHOWUPSTREAM="auto"
 
-source ~/.git-prompt.sh
+if [ -f ~/.git-prompt.sh ]; then
+    source ~/.git-prompt.sh
+fi
 BLACK=$(tput setaf 0)
 RED=$(tput setaf 1)
 GREEN=$(tput setaf 2)
