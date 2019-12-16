@@ -55,6 +55,6 @@ function set_prefix {
 PS1='\[${WHITE}\][`date "+%a, %b %d %H:%M"`]:\[${CYAN}\]\W:\[${YELLOW}\](\[${MAGENTA}\]`__git_ps1 "\[${BRIGHT}${RED}\]%s"`\[${NORMAL}${YELLOW}\])\[${NORMAL}\]\$ '
 # PS1='\[\033[1;32m\]\u:\[\033[1;34m\] \W \$\[\033[0m\]'
 
-export PATH=$PATH:~/mongodb/bin/
-export NVM_DIR="/Users/glorytekos/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+# export PATH=$PATH:~/mongodb/bin/
+# export NVM_DIR="/Users/glorytekos/.nvm"
+# [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
