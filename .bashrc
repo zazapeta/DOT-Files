@@ -237,3 +237,44 @@ function gmerge() {
     git merge --no-ff --commit -m "Merge $1 into $BRANCH" $1
     echo "Merge $1 into $BRANCH DONE"
 }
+
+function gfastdeploy() {
+    git checkout "$*"
+    gmerge develop
+    git push
+    echo '-------------------------------'
+    echo "        $* ✅"
+    echo '-------------------------------'
+}
+
+# FAST DEPLOY
+function gfastdeployAll() {
+    read -p "⚡⚡⚡ storybook, loadtest, stagin & master. Are you sure ??? (Y to continue) ⚡⚡⚡" -n 1 -r
+    echo    # (optional) move to a new line
+    if [[ ! $REPLY =~ ^[Yy]$ ]]
+    then
+        exit 1
+    fi
+    git checkout develop
+    git pull
+    
+    gfastdeploy storybook
+    gfastdeploy loadtest
+    gfastdeploy staging
+
+    git checkout master
+    gmerge staging
+    git push
+    echo '-------------------------------'
+    echo "        master ✅"
+    echo '-------------------------------'
+}
+
+# START WORK
+function SYMENT_WORK(){
+    cd ~/Work/Syment/app.syment.com
+    git pull
+    code .
+    gnome-terminal .
+    npm start
+}
